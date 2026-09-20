@@ -11,13 +11,13 @@ import { api } from '../lib/api.js';
 const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 24,
+    y: 10,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.65,
+      duration: 0.4,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -53,7 +53,7 @@ export default function Experience() {
         />
 
         {/* Glow */}
-        <div className="pointer-events-none absolute right-[-150px] top-[-150px] h-[450px] w-[450px] rounded-full bg-cyan-400/[0.07] blur-[120px]" />
+        <div className="pointer-events-none absolute right-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-cyan-400/[0.06] blur-[60px] sm:right-[-150px] sm:top-[-150px] sm:h-[450px] sm:w-[450px] sm:blur-[120px]" />
 
         <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
 
@@ -158,15 +158,15 @@ export default function Experience() {
                     {/* Timeline dot */}
                     <div className="absolute left-0 top-8 hidden md:flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-[#07090c]">
 
-                      <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_20px_rgba(34,211,238,.7)]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,.55)]" />
 
                     </div>
 
                     {/* Experience Card */}
-                    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/20 hover:bg-white/[0.04]">
+                    <div className="group relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] transition-[transform,border-color,background-color] duration-200 will-change-transform hover:-translate-y-1 hover:border-cyan-400/20 hover:bg-white/[0.04]">
 
                       {/* Top glow */}
-                      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
 
                       <div className="p-6 sm:p-8 lg:p-9">
 
@@ -258,7 +258,7 @@ export default function Experience() {
                             Backend · Full Stack
                           </span>
 
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.07] text-slate-600 transition-all duration-300 group-hover:border-cyan-400/20 group-hover:text-cyan-400">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.07] text-slate-600 transition-[border-color,color] duration-200 group-hover:border-cyan-400/20 group-hover:text-cyan-400">
                             <ArrowUpRight size={15} />
                           </div>
 
@@ -309,7 +309,7 @@ export default function Experience() {
 
           <div className="relative overflow-hidden rounded-3xl border border-cyan-400/10 bg-gradient-to-br from-cyan-400/[0.06] via-white/[0.02] to-blue-500/[0.04] px-6 py-14 text-center sm:px-10">
 
-            <div className="pointer-events-none absolute left-1/2 top-0 h-40 w-80 -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[90px]" />
+            <div className="pointer-events-none absolute left-1/2 top-0 h-32 w-64 -translate-x-1/2 rounded-full bg-cyan-400/[0.08] blur-[60px] sm:h-40 sm:w-80 sm:blur-[90px]" />
 
             <div className="relative">
 
@@ -328,7 +328,7 @@ export default function Experience() {
 
               <a
                 href="/contact"
-                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300"
+                className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-black transition-[transform,background-color] duration-200 hover:-translate-y-1 hover:bg-cyan-300"
               >
                 Start a conversation
                 <ArrowUpRight size={17} />
