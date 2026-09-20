@@ -261,7 +261,7 @@ export default function Admin() {
 
       <header className="sticky top-0 z-40 border-b border-white/[0.07] bg-[#050505]/90 backdrop-blur-xl">
 
-        <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex min-w-0 h-16 max-w-[1600px] items-center justify-between gap-3 px-3 sm:px-6 lg:px-8">
 
           <div className="flex items-center gap-3">
 
@@ -306,11 +306,14 @@ export default function Admin() {
             </div>
 
             <button
+              type="button"
               onClick={logout}
-              className="hidden items-center gap-2 rounded-lg border border-white/[0.08] px-3 py-2 text-xs font-semibold text-slate-400 transition hover:border-red-400/20 hover:bg-red-400/[0.05] hover:text-red-300 sm:flex"
+              aria-label="Sign out"
+              title="Sign out"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/[0.08] text-slate-400 transition hover:border-red-400/20 hover:bg-red-400/[0.05] hover:text-red-300 sm:h-auto sm:w-auto sm:gap-2 sm:px-3 sm:py-2"
             >
               <LogOut size={14} />
-              Sign out
+              <span className="hidden sm:inline">Sign out</span>
             </button>
 
           </div>
@@ -419,9 +422,9 @@ export default function Admin() {
         <div className="min-w-0 flex-1">
 
           {/* Mobile nav */}
-          <div className="border-b border-white/[0.07] bg-[#07090c] px-4 py-3 lg:hidden">
+          <div className="border-b border-white/[0.07] bg-[#07090c] px-3 py-3 lg:hidden">
 
-            <div className="flex gap-2 overflow-x-auto">
+            <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
 
               {tabs.map((item) => {
                 const Icon = item.icon;
@@ -445,7 +448,7 @@ export default function Admin() {
             </div>
           </div>
 
-          <div className="px-4 py-8 sm:px-6 lg:px-10 lg:py-10">
+          <div className="px-3 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">
 
             {/* =================================================
                 TOP PAGE HEADER
@@ -455,7 +458,7 @@ export default function Admin() {
               initial={reduceMotion ? false : 'hidden'}
               animate={reduceMotion ? false : 'visible'}
               variants={fadeUp}
-              className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"
+              className="mb-7 flex min-w-0 flex-col justify-between gap-5 sm:mb-8 sm:flex-row sm:items-end"
             >
 
               <div>
@@ -466,7 +469,7 @@ export default function Admin() {
                     : tabs.find((x) => x.key === tab)?.label}
                 </p>
 
-                <h1 className="mt-2 text-3xl font-black tracking-[-0.04em] text-white sm:text-4xl">
+                <h1 className="mt-2 break-words text-2xl font-black leading-tight tracking-[-0.04em] text-white sm:text-4xl">
                   {tab === 'overview'
                     ? 'Portfolio control center'
                     : tab === 'profile'
@@ -491,7 +494,7 @@ export default function Admin() {
               {tab === 'projects' && (
                 <button
                   onClick={resetProject}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-cyan-300"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-bold text-black transition hover:-translate-y-0.5 hover:bg-cyan-300 sm:w-auto"
                 >
                   <Plus size={16} />
                   New project
@@ -1081,7 +1084,7 @@ function ProjectsManager({
             rows={4}
           />
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2">
 
             <AdminInput
               label="Sort order"
@@ -1198,7 +1201,7 @@ function ProjectsManager({
 
               </div>
 
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
 
                 <button
                   onClick={() => prepareProject(project)}
